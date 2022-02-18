@@ -1,0 +1,46 @@
+/*
+  Project name(项目名称)：CSS_animation 
+  File name(文件名): t7
+  Author(作者）: mao
+  Author QQ：1296193245
+  GitHub：https://github.com/maomao124/
+  Date(创建日期)： 2022/2/18 
+  Time(创建时间)： 14:09
+  Version(版本): 1.0
+  Description(描述)： 无
+ */
+
+
+@keyframes box {
+    0% {
+        transform: rotate(0);
+    }
+    50% {
+        transform: rotate(0.5turn);
+    }
+    100% {
+        transform: rotate(1turn);
+    }
+}
+
+div {
+    width: 100px;
+    height: 100px;
+    float: left;
+    border: 3px solid black;
+    text-align: center;
+    line-height: 100px;
+    position: relative;
+    animation-name: box;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+}
+
+.one {
+    animation-play-state: running;
+}
+
+.two {
+    margin-left: 50px;
+    animation-play-state: paused;
+}

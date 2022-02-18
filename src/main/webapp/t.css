@@ -1,0 +1,119 @@
+/*
+  Project name(项目名称)：CSS_animation 
+  File name(文件名): t
+  Author(作者）: mao
+  Author QQ：1296193245
+  GitHub：https://github.com/maomao124/
+  Date(创建日期)： 2022/2/18 
+  Time(创建时间)： 13:48
+  Version(版本): 1.0
+  Description(描述)：
+  @keyframes 规则
+要创建 CSS 动画，您首先需要了解 @keyframes 规则，@keyframes 规则用来定义动画各个阶段的属性值，类似于 flash 动画中的关键帧
+@keyframes animationName {
+    from {
+        properties: value;
+    }
+    percentage {
+        properties: value;
+    }
+    to {
+        properties: value;
+    }
+}
+animationName：表示动画的名称；
+from：定义动画的开头，相当于 0%；
+percentage：定义动画的各个阶段，为百分比值，可以添加多个；
+to：定义动画的结尾，相当于 100%；
+properties：不同的样式属性名称，例如 color、left、width 等等。
+
+动画创建好后，还需要将动画应用到指定的 HTML 元素。要将动画应用到指定的 HTML 元素需要借助 CSS 属性，CSS 中提供了如下所示的动画属性：
+animation-name：设置需要绑定到元素的动画名称；
+animation-duration：设置完成动画所需要花费的时间，单位为秒或毫秒，默认为 0；
+animation-timing-function：设置动画的速度曲线，默认为 ease；
+animation-fill-mode：设置当动画不播放时（动画播放完或延迟播放时）的状态；
+animation-delay：设置动画开始之前的延迟时间，默认为 0；
+animation-iteration-count：设置动画被播放的次数，默认为 1；
+animation-direction：设置是否在下一周期逆向播放动画，默认为 normal；
+animation-play-state：设置动画是正在运行还是暂停，默认是 running；
+animation：所有动画属性的简写属性。
+
+animation-timing-function
+animation-timing-function 属性用来设置动画播放的速度曲线，通过速度曲线的设置可以使动画播放的更为平滑。animation-timing-function
+值       	描述
+linear	动画从开始到结束的速度是相同的
+ease	默认值，动画以低速开始，然后加快，在结束前变慢
+ease-in	动画以低速开始
+ease-out	动画以低速结束
+ease-in-out	动画以低速开始，并以低速结束
+cubic-bezier(n, n, n, n)	使用 cubic-bezier() 函数来定义动画的播放速度，参数的取值范围为 0 到 1 之间的数值
+
+animation-fill-mode
+animation-fill-mode 属性用来设置当动画不播放时（开始播放之前或播放结束之后）动画的状态（样式）
+值   	描述
+none	不改变动画的默认行为
+forwards	当动画播放完成后，保持动画最后一个关键帧中的样式
+backwards	在 animation-delay 所指定的时间段内，应用动画第一个关键帧中的样式
+both	同时遵循 forwards 和 backwards 的规则
+
+animation-delay
+animation-delay 属性用来定义动画开始播放前的延迟时间，单位为秒或者毫秒
+animation-delay: time;
+其中参数 time 就是动画播放前的延迟时间，参数 time 既可以为正值也可以为负值。参数值为正时，表示延迟指定时间开始播放；
+参数为负时，表示跳过指定时间，并立即播放动画。
+
+animation-iteration-count
+animation-iteration-count 属性用来定义动画播放的次数
+值	描述
+n	使用具体数值定义动画播放的次数，默认值为 1
+infinite	表示动画无限次播放
+
+animation-direction
+animation-direction 属性用来设置是否轮流反向播放动画
+值   	描述
+normal	以正常的方式播放动画
+reverse	以相反的方向播放动画
+alternate	播放动画时，奇数次（1、3、5 等）正常播放，偶数次（2、4、6 等）反向播放
+alternate-reverse	播放动画时，奇数次（1、3、5 等）反向播放，偶数次（2、4、6 等）正常播放
+
+animation-play-state
+animation-play-state 属性用来设置动画是播放还是暂停
+值	描述
+paused	暂停动画的播放
+running	正常播放动画
+ */
+
+
+@keyframes ball {
+    0% {
+        top: 0px;
+        left: 0px;
+    }
+    25% {
+        top: 0px;
+        left: 350px;
+    }
+    50% {
+        top: 200px;
+        left: 350px;
+    }
+    75% {
+        top: 200px;
+        left: 0px;
+    }
+    100% {
+        top: 0px;
+        left: 0px;
+    }
+}
+
+div {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    border: 3px solid black;
+    position: relative;
+    animation-name: ball;
+    animation-duration: 4s;
+}
+    
